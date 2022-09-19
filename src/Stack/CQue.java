@@ -9,6 +9,7 @@ public class CQue {
 	
 	CQue() {
 		this(DEFAULT);
+		// Adding comment 2
 	}
 	CQue(int n)
 	{
@@ -68,6 +69,7 @@ public class CQue {
 			System.out.print(data[i]+" ");
 		}
 		System.out.println();
+		// Adding comment
 	}
 	
 	
