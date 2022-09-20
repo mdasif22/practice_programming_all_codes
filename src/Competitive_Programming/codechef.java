@@ -1,4 +1,4 @@
-package compitetive_Programs;
+package Competitive_Programming;
 import java.util.ArrayList;
 import java.util.Scanner;
 

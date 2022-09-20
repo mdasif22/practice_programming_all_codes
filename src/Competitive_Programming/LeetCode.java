@@ -1,4 +1,4 @@
-package compitetive_Programs;
+package Competitive_Programming;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -111,44 +111,44 @@ import java.util.List;
 
 
 //Problem 867
-class LeetCode
-{
-	public static int[][] transpose(int[][] matrix) {
-		int len=matrix.length;
-		int[][] mat= new int[matrix[0].length][len];     
-		
-		for(int row=0;row<len;row++)
-		{
-			for(int col=0;col<matrix[row].length;col++)
-			{
-				mat[col][row] = matrix[row][col];
-			}
-			
-		}
-		return mat;
-    }
-	
-	public static void main(String[] args) {
-		int[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
-		
-		for(int i=0;i<mat.length;i++) {
-			for(int j=0;j<mat.length;j++) {
-				System.out.print(mat[i][j]+" ");
-			}
-			System.out.println();
-		}
-		System.out.println("Transpose matrix");
-		int[][] ans = transpose(mat);
-		//System.out.println(Arrays.toString(ans));
-		for(int i=0;i<ans.length;i++) {
-			for(int j=0;j<ans.length;j++) {
-				System.out.print(ans[i][j]+" ");
-			}
-			System.out.println();
-		}
-		
-	}
-}
+//class LeetCode
+//{
+//	public static int[][] transpose(int[][] matrix) {
+//		int len=matrix.length;
+//		int[][] mat= new int[matrix[0].length][len];     
+//		
+//		for(int row=0;row<len;row++)
+//		{
+//			for(int col=0;col<matrix[row].length;col++)
+//			{
+//				mat[col][row] = matrix[row][col];
+//			}
+//			
+//		}
+//		return mat;
+//    }
+//	
+//	public static void main(String[] args) {
+//		int[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
+//		
+//		for(int i=0;i<mat.length;i++) {
+//			for(int j=0;j<mat.length;j++) {
+//				System.out.print(mat[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println("Transpose matrix");
+//		int[][] ans = transpose(mat);
+//		//System.out.println(Arrays.toString(ans));
+//		for(int i=0;i<ans.length;i++) {
+//			for(int j=0;j<ans.length;j++) {
+//				System.out.print(ans[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//		
+//	}
+//}
 
 
 //Problem 268 (Missing number)
@@ -1477,6 +1477,31 @@ public static void main(String[] args) {
 */
 
 
-
+//Problem 33 Search in sorted rotate array
+//public static int search(int[] nums, int target) {
+//    int low = 0,high=nums.length-1;
+//    
+//    while(low<=high) {
+//    	int mid=(low+high)/2;
+//    	if(nums[mid]==target)
+//    		return mid;
+//    	if(nums[low]<=nums[mid]) {
+//    		if(target>=nums[low] && target<=nums[mid]) {
+//    			high=mid-1;
+//    		}
+//    		else
+//    			low=mid+1;
+//    	}
+//    	else {
+//    		if(target>=nums[mid]&&target<=nums[high]) {
+//    			low=mid+1;
+//    		}
+//    		else
+//    			high=mid-1;
+//    	}
+//    }
+//    return -1;
+//    
+//}
 
 
