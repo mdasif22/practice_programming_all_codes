@@ -19,7 +19,7 @@ class Q215 {
     }
     
     public static void main(String[] args) {
-		int[] num = {3,2,1,5,6,4};
+		int[] num = {7 ,10, 4, 3, 20, 15};
 		int target = 2;
 		int ans = findKthLargest(num,target);
 		System.out.println(ans);

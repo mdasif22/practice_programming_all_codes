@@ -1,5 +1,6 @@
 package Competitive_Programming;
 
+import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public class leetcode2 {
@@ -44,5 +45,87 @@ public class leetcode2 {
 //		return max_prod;
 //	}
 
+
+//Problem 290 Word pattern
+/*
+	public static boolean wordPattern(String pattern,String s) {
+		//Method 1
+//		HashMap<Character,String> map = new HashMap<>();
+//		String[] str = pattern.split(" ");
+//		
+//		for(int i=0;i<s.length();i++) {
+//			char ch = s.charAt(i);
+//			if(str.length!=s.length())
+//                return false;
+//			if(!map.containsKey(ch)) {
+//				if(map.containsValue(str[i])) {
+//					return false;
+//				}
+//				map.put(ch, str[i]);
+//			}
+//			else if(map.containsKey(ch)) {
+//				if(!map.get(ch).equals(str[i]))
+//					return false;
+//			}
+//		}
+//		//&& !map.containsValue(str[i])
+//		return true;
+		
+		//Method 2
+		HashMap<Character,String> map = new HashMap<>();
+		String[] str = s.split(" ");
+		
+		for(int i=0;i<pattern.length();i++) {
+			char ch = pattern.charAt(i);
+			if(str.length!=pattern.length())
+                return false;
+            
+            if(map.containsKey(ch)) {
+				if(!map.get(ch).equals(str[i]))
+					return false;
+			}
+            
+			else {
+				if(map.containsValue(str[i])) {
+					return false;
+				}
+				map.put(ch, str[i]);
+			}
+			
+		}
+		return true;
+	}
+*/
+	
+	//Problem 525 Contiguous array
+//		public static int findMaxLength(int[] nums) {
+//	        HashMap hm = new HashMap();
+//	        int sum=0,max=0;
+//	        hm.put(0,-1);
+//	        for(int i=0;i<nums.length;i++) {
+//	        	if(nums[i]==0)
+//	        		sum+=-1;
+//	        	else if(nums[i]==1){
+//	        		sum+=1;
+//	        	}
+//	        	
+//	        	if(hm.containsKey(sum)) {
+//	        		int index = (int) hm.get(sum);
+//	        		int len = i - index;
+//	        		if(len>max)
+//	        			max=len;
+//	        	}
+//	        	else {
+//	        		hm.put(sum, i);
+//	        	}
+//	        }
+//	        return max;
+//	    }
+	
+	
+	
 	
 }
+
+	
+	
