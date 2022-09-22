@@ -31,19 +31,17 @@ public class Move_all_neg {
 //		return tem;
 		
 		//Approach 2
-//		int j=0;
-//		for(int i=0;i<num.length;i++) {
-//			if(num[i]<0) {
-//				int temp=num[i];
-//				num[i]=num[j];
-//				num[j]=temp;
-//				j++;
-//			}
-//			
-//		}
-//		return num;
-		
-		return null;
+		int j=0;
+		for(int i=0;i<num.length;i++) {
+			if(num[i]<0) {
+				int temp=num[i];
+				num[i]=num[j];
+				num[j]=temp;
+				j++;
+			}
+			
+		}
+		return num;
 	}
 
 }

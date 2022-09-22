@@ -259,12 +259,28 @@ public class hashmap {
         return max;
     }
 	
+	//Pairs with equal sum
+	public static boolean equalSum(int[] arr) {
+		HashSet set = new HashSet();
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				int sum = arr[i]+arr[j];
+				if(set.contains(sum))
+					return true;
+				else
+					set.add(sum);
+			}
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		//Variables declaration
 		int[] arr1= {1,2,3,1,4,5,3,1,0};
 		int[] arr2= {3,2,4};
 		int[] arr3= {2,8,-3,-5,2,-4,6,1,2,1,-3,4};
 		int[] arr4= {0,1,0};
+		int[] arr5= {2,9,3,5,8,6,4};
 		String str1 ="pwwkew";
 		String pattern ="abba";
 		String str ="dog cat cat dog";
@@ -291,8 +307,11 @@ public class hashmap {
 		
 		//System.out.println(wordPattern(pattern,str));
 		
-		int ans = findMaxLength(arr4);
-		System.out.println(ans);
+//		int ans = findMaxLength(arr4);
+//		System.out.println(ans);
+		
+//		boolean ans = equalSum(arr5);
+//		System.out.println(ans);
 	}
 
 }
