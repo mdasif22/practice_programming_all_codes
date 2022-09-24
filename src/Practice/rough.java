@@ -4,17 +4,20 @@ import java.util.Arrays;
 
 class rough {
 	
-	static int rec(int n) {
-		if(n==0 || n==1)
-			return n;
-		return rec(n-1)+rec(n-2);
+	public static int findMaxConsecutiveOnes(int[] nums,int n) {
+		//int n = nums.length;
+		int ex = n*(n+1)/2;
+		int sum=0;
+		for(int i=0;i<n-1;i++) {
+			sum+=nums[i];
+		}
+		return ex-sum;
 	}
 	
-	
 	public static void main(String[] args) {
-//		int[] num = {2,3,-2,4};
-//		int ans = maxProduct(num);
-		int ans = rec(10-1);
+		int[] arr = {1, 2, 3, 5};
+		int N = 5;
+		int ans = findMaxConsecutiveOnes(arr,N);
 		System.out.println(ans);
 	}
 	

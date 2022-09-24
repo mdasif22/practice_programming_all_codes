@@ -137,7 +137,20 @@ public class leetcode2 {
 //		}
 //	}
 
-	
+	//Problem 485. Max Consecutive Ones
+//	public static int findMaxConsecutiveOnes(int[] nums) {
+//        int max=0,count=0;
+//        for(int i=0;i<nums.length;i++) {
+//        	if(nums[i]==1) {
+//        		count++;
+//        		if(count>max)
+//        			max=count;
+//        	}
+//        	else
+//        		count=0;
+//        }
+//        return max;
+//    }
 	
 }
 
