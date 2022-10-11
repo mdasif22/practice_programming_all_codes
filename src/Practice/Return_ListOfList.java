@@ -1,11 +1,12 @@
 package Practice;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-class rough {
+class Return_ListOfList {
 	
 	
-	public static List<List<Integer>> generate(int numRows) {
+	public static List<List<Integer>> generate() {
 		List<List<Integer>> list1 = new ArrayList<>();
 		for(int i=0;i<5;i++) {
 			List list2 = new ArrayList();
@@ -19,9 +20,7 @@ class rough {
 	}
 	
 	public static void main(String[] args) {
-		int[][] arr = {{1},{1,1},{1,2,1},{1,3,3,1},{1,4,6,4,1}};
-		int N = 5;
-		List ans = generate(N);
+		List ans = generate();
 		System.out.println(ans);
 	}
 	
