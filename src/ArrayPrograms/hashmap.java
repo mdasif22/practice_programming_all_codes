@@ -274,6 +274,27 @@ public class hashmap {
 		return false;
 	}
 	
+	// Rank of each element
+	public static int[] arrayRankTransform(int[] arr) {
+        int[] copy=arr.clone();
+       Arrays.sort(copy);
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int rank=0;
+        for(int i=0;i<copy.length;i++){
+            int ele=copy[i];
+            if(!map.containsKey(ele)){
+                rank++;
+                map.put(ele,rank);
+            }
+        }
+        int[] ranks=new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            ranks[i]=map.get(arr[i]);
+        }
+        return ranks;
+		
+    }
+	
 	public static void main(String[] args) throws Exception {
 		//Variables declaration
 		int[] arr1= {1,2,3,1,4,5,3,1,0};
@@ -281,6 +302,8 @@ public class hashmap {
 		int[] arr3= {2,8,-3,-5,2,-4,6,1,2,1,-3,4};
 		int[] arr4= {0,1,0};
 		int[] arr5= {2,9,3,5,8,6,4};
+		int[] arr6 = {10,40,20};
+		
 		String str1 ="pwwkew";
 		String pattern ="abba";
 		String str ="dog cat cat dog";
@@ -312,6 +335,9 @@ public class hashmap {
 		
 //		boolean ans = equalSum(arr5);
 //		System.out.println(ans);
+		
+		int[] ans = arrayRankTransform(arr6);
+		System.out.println(Arrays.toString(ans));
 	}
 
 }
