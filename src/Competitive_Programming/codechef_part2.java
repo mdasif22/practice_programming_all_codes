@@ -515,3 +515,34 @@ class codechef_part2
 	}
 }
 */
+
+//****** MINIMUN JUMP ********
+//class rough
+//{	
+//	public static void main (String[] args)
+//	{
+//		Scanner sc = new Scanner(System.in);
+//		int t = sc.nextInt();
+//		while(t-->0){
+//		    int x = sc.nextInt();
+//		    int y = sc.nextInt();
+//		    int count=0;
+//		    while(x>0){
+//		    	if(x-y>=y || x-y==0) {
+//		    		x=x-y;
+//		    		count++;
+//		    	}
+//		    	else
+//		    	{
+//		    		x--;
+//		    		count++;
+//		    	}
+//		    }
+//		    System.out.println(count);
+//		}
+//	}
+//		
+//}
+
+
+

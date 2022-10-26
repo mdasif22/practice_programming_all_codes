@@ -25,30 +25,30 @@ package Practice;
 //}
 
 //Fibonacci series using recursion
-public class recursion {
-
-	static int a = 0;
-	static int b = 1,c=0;
-	static void display(int n) {
-		
-		if(n>0){
-			c = a+b;
-			System.out.println(a+" + "+b+" = "+c);
-			a=b;
-			b=c;
-			display(n-1);
-		}
-		else {
-			return;
-		}
-	}
-
-	public static void main(String[] args) {
-		int n =10;
-		display(n-2);
-	}
-
-}
+//public class recursion {
+//
+//	static int a = 0;
+//	static int b = 1,c=0;
+//	static void display(int n) {
+//		
+//		if(n>0){
+//			c = a+b;
+//			System.out.println(a+" + "+b+" = "+c);
+//			a=b;
+//			b=c;
+//			display(n-1);
+//		}
+//		else {
+//			return;
+//		}
+//	}
+//
+//	public static void main(String[] args) {
+//		int n =10;
+//		display(n-2);
+//	}
+//
+//}
 
 //Binary search using recursion
 //public class recursion {
@@ -311,26 +311,26 @@ public class recursion {
 //}
 
 //******** SUBSEQUENCE STRING ******
-//class recursion{
-//	
-//	static void subseq(String p,String up)
-//	{
-//		if(up.isEmpty())
-//		{
-//			System.out.println(p);
-//			return;
-//		}
-//			
-//		char c = up.charAt(0);
-//		subseq(p+c,up.substring(1));
-//		subseq(p,up.substring(1));
-//	}
-//	
-//	public static void main(String[] args) {
-//		subseq("","abc");
-//		
-//	}
-//}
+class recursion{
+	
+	static void subseq(String p,String up)
+	{
+		if(up.isEmpty())
+		{
+			System.out.println(p);
+			return;
+		}
+			
+		char c = up.charAt(0);
+		subseq(p+c,up.substring(1));
+		subseq(p,up.substring(1));
+	}
+	
+	public static void main(String[] args) {
+		subseq("","abc");
+		
+	}
+}
 
 // ************* RETURN ARRAYLIST ***********
 //import java.util.ArrayList;

@@ -56,7 +56,7 @@ public class StringProgram {
             str2 = new String(charArray1) ;
             System.out.println("After Sorting String = "+str1 +" and "+ str2);
             
-            //Permutation checking
+            //checking
             if(str1.equals(str2))
             {
             	System.out.println("Both are equals");
@@ -91,7 +91,7 @@ public class StringProgram {
             System.out.println("Original String = "+str1 +" and "+str2);
             System.out.println("After Sorting String = "+new String(charArray) +" and "+new String(charArray1));
             
-            //Permutation checking
+            // checking
             if(new String(charArray).equals(new String(charArray1)))
             {
             	System.out.println("Both are equals");
@@ -443,6 +443,20 @@ public class StringProgram
 //	}
 //}
 
+//****************	PRINT SUBSTRING *******************
+//public class StringProgram {
+//
+//	public static void main(String[] args) {
+//		String str="abc";
+//		for(int i=0;i<str.length();i++) {
+//			for(int j=i+1;j<=str.length();j++) {
+//				System.out.println(str.substring(i,j));
+//			}
+//		}
+//
+//	}
+//
+//}
 
 //*************** Number of Possible SubStrings ***************
 //Number of Possible SubStrings
@@ -450,6 +464,7 @@ public class StringProgram
 //	public static void main(String[] args) {
 //	Scanner sc = new Scanner(System.in);
 //	String str = sc.next();
+//		String str = "aka";
 //	int n = str.length();
 //	System.out.println("Possible Substrings are = "+(n*(n+1))/2);
 //		
