@@ -1,7 +1,8 @@
-package Practice;
-import java.util.*;
+package Sliding_Window;
 
-class rough {
+import java.util.Arrays;
+
+class First_negative_integer_in_every_window_of_size_k {
 	
 	public static long[] printFirstNegativeInteger(long A[], int N, int K)
     {
