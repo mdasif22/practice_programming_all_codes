@@ -234,7 +234,7 @@ public class hashmap {
 		return true;
 	}
 	
-	//Problem 525 Contiguous array
+	//Problem 525 Contiguous array, Longest Subarray with Equal 0's and 1's
 	public static int findMaxLength(int[] nums) {
         HashMap hm = new HashMap();
         int sum=0,max=0;

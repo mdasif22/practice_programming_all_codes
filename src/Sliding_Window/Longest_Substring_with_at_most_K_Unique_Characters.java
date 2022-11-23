@@ -59,7 +59,7 @@ public class Longest_Substring_with_at_most_K_Unique_Characters {
 	}
 	
 	public static void main(String[] args) {
-		String str = "aabcbcdbca"; //abbacbcdbadbdbbdcb   aabcbcdbca
+		String str = "aaabb"; //abbacbcdbadbdbbdcb   aabcbcdbca
 		int k=3;
 		int ans = Longest_Substring_with_at_most_K_Unique_Characters1(str,k);
 		System.out.println(ans);

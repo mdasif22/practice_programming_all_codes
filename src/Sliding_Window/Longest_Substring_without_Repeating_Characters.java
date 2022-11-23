@@ -51,6 +51,31 @@ public class Longest_Substring_without_Repeating_Characters {
 		}
 		return ans;
 	}
+	
+		//Method 2 using HashSet
+		public static  int Longest_Substring_without_Repeating_Characters2(String str) {
+			Set<Character> set = new HashSet();
+			int left=0,right=0;
+			int max=0,count=0;
+			while(right<str.length()) {
+				if(!set.contains(str.charAt(right))) {
+					set.add(str.charAt(right));
+					int len = right-left+1;
+					if(len>max)
+						max=len;
+					right++;
+				}
+				else {
+					while(str.charAt(left)!=str.charAt(right)) {
+						set.remove(str.charAt(left));
+						left++;
+					}
+					set.remove(str.charAt(left));
+					left++;
+				}
+			}
+			return max;
+		}
 
 	public static void main(String[] args) {
 		String str = "abbacbcdbadbdbbdcb"; //abbacbcdbadbdbbdcb   aabcbcdbca
