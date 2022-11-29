@@ -44,7 +44,17 @@ public class rotateArray {
 		return nums;
 	}
 	
-	//left rotate multiple times
+	//Easiest Way
+	public static int[] RotateArrayLeft2(int[] arr, int times) { // 1,2,3,4,5 = 3,4,5,1,2
+		int[] temp = new int[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			temp[i % arr.length] = arr[(i + times) % arr.length];
+		}
+
+		return temp;
+	}
+	
+	    //left rotate multiple times
 		public static int[] rotateLeft2(int[] nums, int k) {
 			int[] temp = new int[k];
 			int len = nums.length;
@@ -78,7 +88,10 @@ public class rotateArray {
 		
 		int[] ans2 = rotateLeft2(nums1,2);
 		System.out.println(Arrays.toString(ans2));
+		
+		int[] arr = { 1, 2, 3, 4, 5 };
+		int[] ans = RotateArrayLeft2(arr, 2);
+		System.out.println(Arrays.toString(ans));
 
 	}
-
 }
