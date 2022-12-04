@@ -1,4 +1,4 @@
-package Stack;
+package Queue;
 
 public class QueueClass{
 	int rear = -1;

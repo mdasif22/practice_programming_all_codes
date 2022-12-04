@@ -1,4 +1,4 @@
-package Stack;
+package Queue;
 
 public class CQue {
 	int rear = -1;
