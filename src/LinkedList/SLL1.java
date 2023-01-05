@@ -1,5 +1,8 @@
 package LinkedList;
 
+import LinkedList.Rough.Node;
+
+//Shradha di's LL
 public class SLL1 {
 	
 	Node head;
@@ -84,6 +87,17 @@ public class SLL1 {
 		head = head.next;
 		System.out.println("Deleted node : "+data);
 	}
+	
+	//My Appraoch
+//	void deletegiv(int index){
+//		Node temp=head;
+//		for(int i=1;i<index;i++) {
+//			temp=temp.next;
+//		}
+//		int data=temp.next.value;
+//		temp.next=temp.next.next;
+//		System.out.println("Deleted item : "+data);
+//	}
 	
 	public void deleteLast() {
 		if(head == null) {

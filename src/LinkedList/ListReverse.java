@@ -77,6 +77,27 @@ public class ListReverse {
 		
 	}
 	
+	 //List reverse 2
+	//Q92
+	 public static Node reverseBetween(Node head, int left, int right) {
+	       Node dummy = new Node(0);
+	       Node prev = dummy;
+	       
+	       for(int i=0;i<left-1;i++) {
+	    	   prev=prev.next;
+	       }
+	       Node cur = prev.next;
+	       
+	       for(int i=0;i<right-left;i++) {
+	    	   Node next = cur.next;
+	    	   cur.next=next.next;
+	    	   next.next=prev.next;
+	    	   prev.next=next.next;
+	       }
+	       
+	       return dummy.next;
+	 }
+	
 	//Recursive approach
 	void Recursivereverse(Node node) {
 		if(node==tail) {
@@ -92,7 +113,6 @@ public class ListReverse {
 	
 	//Part of Problem 234 leetcode
 	Node mid(Node h1) {
-		
 		if(h1==null)
 			return h1;
 		

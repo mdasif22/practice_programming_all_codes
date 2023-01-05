@@ -32,7 +32,6 @@ public class SortList {
 	//Bubble Sort
 	void Bubblesort() {
 		Node temp = head;
-		
 		int count =0;
 		
 		while(temp!=null) {
@@ -58,7 +57,7 @@ public class SortList {
 	}
 	
 	
-	Node mid(Node h1) {
+	public Node mid(Node h1) {
 		
 		if(h1==null)
 			return h1;

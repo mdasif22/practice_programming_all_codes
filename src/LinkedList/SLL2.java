@@ -1,5 +1,6 @@
 package LinkedList;
 
+//Kunal's LL
 public class SLL2 {
 
 	Node head;
@@ -124,6 +125,17 @@ public class SLL2 {
 			return val;
 		}
 	}
+	
+	//My Appraoch
+//	void deletegiv(int index){
+//		Node temp=head;
+//		for(int i=1;i<index;i++) {
+//			temp=temp.next;
+//		}
+//		int data=temp.next.value;
+//		temp.next=temp.next.next;
+//		System.out.println("Deleted item : "+data);
+//	}
 	
 	//To move towards a position
 	public Node get(int index) {

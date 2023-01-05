@@ -1,7 +1,5 @@
 package LinkedList;
 
-import LinkedList.ListReverse.Node;
-
 public class LLQ {
 
 	Node head, tail;
@@ -177,8 +175,8 @@ public class LLQ {
 	
 	public Node removeElements(Node head, int val) {
 	        
-			 Node f = new Node(0, head);
-			 Node node = f;
+			 Node dummy = new Node(0, head);
+			 Node node = dummy;
 	        while( node != null && node.next != null){
 	            if(node.next.value == val) {
 	            	node.next = node.next.next;
@@ -186,7 +184,7 @@ public class LLQ {
 	            else
 	                node = node.next;
 	        }
-	        return f.next;
+	        return dummy.next;
     }
 	
 	public int getDecimalValue(Node head) {
