@@ -59,7 +59,7 @@ public class LLQ {
 		
 	}
 
-	//duplicate
+	//duplicate Q83
 	public void duplicate() {
 		Node temp = head;
 		while (temp.next != null) {
@@ -75,20 +75,38 @@ public class LLQ {
 		tail.next=null;
 	}
 
-	//Q82
+	//duplicate-II Q82 video - https://www.youtube.com/watch?v=R6-PnHODewY
 	public Node deleteDuplicates(Node head) {
-		if(head == null || head.next == null) 
-			return head;
-		
-        Node next = head.next;
-        
-        if(next.value == head.value){
-            while(next != null && next.value == head.value) next = next.next;
-            return deleteDuplicates(next);
-        } else {
-            head.next = deleteDuplicates(next);
-            return head;
-        }
+			//Method 1
+		 	/* ListNode dummy = new ListNode(0,head);
+	        ListNode prev = dummy;
+
+	        while(head!=null){
+	            if(head.next!=null && head.val==head.next.val){
+	                while(head.next!=null && head.val==head.next.val){
+	                    head=head.next;
+	                }
+	                prev.next = head.next;
+	            }
+	            else{
+	                prev=prev.next;
+	            }
+	            head=head.next;
+	        }
+	        return dummy.next;
+	        */
+	        
+	        //Method 2
+	        if(head == null || head.next == null) return head;
+	        Node next = head.next;
+	        
+	        if(next.value == head.value){
+	            while(next != null && next.value == head.value) next = next.next;
+	            return deleteDuplicates(next);
+	        } else {
+	            head.next = deleteDuplicates(next);
+	            return head;
+	        } 
 	}
 	
 	//merge
@@ -190,6 +208,26 @@ public class LLQ {
 		
 	}
 	
+	//Q1721 video-https://www.youtube.com/watch?v=-sgKd6ZT8gI
+	/*
+	public ListNode swapNodes(ListNode head, int k) {
+        ListNode slow = head;
+        ListNode fast = head;
+        for(int i=1;i<k;i++){
+            fast=fast.next;
+        }
+        ListNode first = fast;
+        while(fast.next!=null){
+            slow=slow.next;
+            fast = fast.next;
+        }
+        int swap = slow.val;
+        slow.val=first.val;
+        first.val = swap;
+
+        return head;
+    } */
+	
 	public void swapNodes(Node head, int k) {
         Node middle = mid(head);
         Node second = Iterativereversel2(middle.next);
@@ -205,7 +243,6 @@ public class LLQ {
         temp2.value = temp;
         
         temp2.next = ans;
-		
     }
 	
 	public Node removeElements(Node head, int val) {
@@ -232,6 +269,35 @@ public class LLQ {
 	    return result;
     }
 	
+	public int iterativeSearch(int key) {
+		Node temp = head;
+		int idx=0;
+		while(temp != null) {
+			if(temp.value==key) {
+				return idx;
+			}
+			temp=temp.next;
+			idx++;
+		}
+		return -1;
+	}
+	
+	public int recursiveSearch(int key) {
+		return helper(head,key);
+	}
+	public int helper(Node head,int key) {
+		if(head==null)
+			return -1;
+		
+		if(head.value==key)
+			return 0;
+		
+		int idx = helper(head.next,key);
+		if(idx==-1)
+			return -1;
+		return idx+1;
+	}
+	
 	//display
 	public void display() {
 		Node temp = head;
@@ -247,14 +313,15 @@ public class LLQ {
 
 		LLQ l = new LLQ();
 		l.last(1);
-		l.last(0);
-		l.last(1);
+		l.last(2);
+		l.last(3);
+		l.last(4);
 //		l.last(7);
 //		l.last(7);
 //		l.last(5);
 //		l.last(6);
 		
-		l.getDecimalValue(l.head);
+		//l.getDecimalValue(l.head);
 		
 //		Node ans = l.removeElements(l.head, 7);
 //		l.display(ans);
@@ -287,6 +354,12 @@ public class LLQ {
 //		Node ans = l.cycleStart();
 //		System.out.println("Starting node is "+ans.value);
 		
+//		System.out.println(l.iterativeSearch(1));
+//		System.out.println(l.iterativeSearch(10));
+		
+		
+		System.out.println(l.recursiveSearch(4));
+		System.out.println(l.recursiveSearch(12));
 	}
 
 }

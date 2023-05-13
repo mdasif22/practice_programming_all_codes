@@ -1,5 +1,7 @@
 package LinkedList;
 
+import LinkedList.LLQ.Node;
+
 public class SortList {
 	Node head=null;
 	
@@ -110,7 +112,7 @@ public class SortList {
 		return result;
 	}
 
-
+	 
 	// Display method
 	 public void display() {
 			Node temp = head;
@@ -133,11 +135,11 @@ public class SortList {
 		list.last(6);
 		list.display();
 		
-		list.Bubblesort();
-		list.display();
-		
-//	 	list.head = list.mergeSort(list.head);
+//		list.Bubblesort();
 //		list.display();
+		
+	 	list.head = list.mergeSort(list.head);
+		list.display();
 		
 	}
 

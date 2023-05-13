@@ -86,6 +86,7 @@ public class ListReverse {
 	       for(int i=0;i<left-1;i++) {
 	    	   prev=prev.next;
 	       }
+	       
 	       Node cur = prev.next;
 	       
 	       for(int i=0;i<right-left;i++) {
@@ -98,7 +99,7 @@ public class ListReverse {
 	       return dummy.next;
 	 }
 	
-	//Recursive approach
+	//Recursive approach to reverse a Linkedlist
 	void Recursivereverse(Node node) {
 		if(node==tail) {
 			head = tail;
@@ -199,7 +200,7 @@ public class ListReverse {
 			temp=temp.next;
 			length++;
 		}
-		temp.next=head;
+		temp.next=head; //connecting last node to first not (circle)
 		
 		int rotation = k % length; 
 		int size = length - rotation;
@@ -264,8 +265,8 @@ public class ListReverse {
 //		list.reorder(list.head);
 //		list.display();
 		
-//		list.head =  list.rotate(list.head,2);
-//		list.display();
+		list.head =  list.rotate(list.head,2);
+		list.display();
 		
 	}
 
