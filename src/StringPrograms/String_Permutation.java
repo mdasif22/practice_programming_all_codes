@@ -31,34 +31,34 @@ import java.util.*;
 //	}
 //}
 
-//************ STRING PERMUTATION METHOD 2 *********************
-//By Sumit
-class String_Permutation{
-	
-	static List<String>  permutation(String up,String p)
-	{
-		if (up.isEmpty()) {
-			List list = new ArrayList();
-			list.add(p);
-			return list;
-		}
-		
-		
-		ArrayList<String> ans = new ArrayList<String>();
-		for(int i=0;i<up.length();i++)
-		{
-			char ch = up.charAt(i);
-			String f=up.substring(0,i);
-			String s=up.substring(i+1);
-			ans.addAll(permutation(f+s,p+ch));
-		}
-		return ans;
-		
-	}
-	
-	public static void main(String[] args) {
-		String str = "abc";
-		List ans = permutation(str,"");
-		System.out.println(ans);
-	}
-}
+////************ STRING PERMUTATION METHOD 2 *********************
+////By Kunal
+//class String_Permutation{
+//	//here value is returning in an arrayList
+//	static List<String>  permutation(String up,String p)
+//	{
+//		if (up.isEmpty()) {
+//			List list = new ArrayList();
+//			list.add(p);
+//			return list;
+//		}
+//		
+//		
+//		ArrayList<String> ans = new ArrayList<String>();
+//		for(int i=0;i<up.length();i++)
+//		{
+//			char ch = up.charAt(i);
+//			String f=up.substring(0,i);
+//			String s=up.substring(i+1);
+//			ans.addAll(permutation(f+s,p+ch));
+//		}
+//		return ans;
+//		
+//	}
+//	
+//	public static void main(String[] args) {
+//		String str = "abc";
+//		List ans = permutation(str,"");
+//		System.out.println(ans);
+//	}
+//}

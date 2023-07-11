@@ -170,7 +170,7 @@ public class LLQ {
       return s;
 	}
 	
-	//Starting node of cycle in list
+	//Q142-Starting node of cycle in list
 	public Node cycleStart() {
 		Node f=head;
 		Node s=head;
@@ -181,13 +181,23 @@ public class LLQ {
 				break;
 			}
 		}
+		if (s != f)
+		    return null;
+		
 		s=head;
-		while(s!=f)
-		{
-			s=s.next;
-			f=f.next;
-		}
-		return s;
+        while(s!=f){
+            s=s.next;
+            f=f.next;
+        }
+        return s;
+
+                //OR
+                
+        // while (head != s) {
+        //     head = head.next;
+        //     s = s.next;
+        // }
+        //return head;
 	}
 	
 	public Node Iterativereversel2(Node midhead) {
@@ -259,6 +269,66 @@ public class LLQ {
 	        return dummy.next;
     }
 	
+	//Q1669 - reference from submitted values
+	 public Node mergeInBetween(Node list1, int a, int b, Node list2) {
+		 Node temp = list1;
+		 Node start = list1; 
+		 Node end = list1;
+
+	        // Take the first pointer to location a.
+	        while(a>1){
+	            a--;
+	            start = start.next;
+	        }
+
+	         // take the second pointer to location b.
+	        while(b>0){
+	            b--;
+	            end = end.next;
+	        }
+	        end=end.next;
+	        // connecting first pointer to list2
+	        start.next=list2;
+	        
+	        // traverse thorugh list2 and connect the end to second pointer
+	        while(list2.next!=null){
+	            list2=list2.next;
+	        }
+	        list2.next = end;
+
+	        return temp;
+	}
+	
+	 //Q1019 - ans referenced from submitted ans
+	 public int[] nextLargerNodes(Node head) {
+		 	Node temp = head;
+	        int len=0;
+	        while(temp!=null){
+	            len++;
+	            temp=temp.next;
+	        }
+	 
+	        int arr[] = new int[len];
+	        int i=0;
+	        while(head!=null){
+	            int val = greaterElement(head);
+	            arr[i++] = val;
+	            head=head.next;
+	        }
+	        return arr;
+	    }
+
+	    public int greaterElement(Node head){
+	    	Node temp = head;
+	        while(temp!=null){
+	            if(temp.value>head.value)
+	                return temp.value;
+	            else
+	                temp=temp.next;
+	        }
+	        return 0;
+	}
+	 
 	public int getDecimalValue(Node head) {
 		int result = head.value;
 	    while(head.next!=null){
@@ -268,6 +338,31 @@ public class LLQ {
 	    
 	    return result;
     }
+	
+	//Q86 video - https://www.youtube.com/watch?v=b4FeEwAGDtU
+     /* public ListNode partition(ListNode head, int x) {
+        ListNode small = new ListNode(0);  //for small elements
+        ListNode high = new ListNode(0);  //for higher elements
+
+        ListNode smallHead = small;
+        ListNode highHead = high;
+
+        while(head!=null){
+            if(head.val<x){
+                smallHead.next=head;
+                smallHead=smallHead.next;
+            }
+            else{
+                highHead.next=head;
+                highHead=highHead.next;
+            }
+            head=head.next;
+        }
+        highHead.next=null;  //last node should be null
+        smallHead.next=high.next;  //connecting small LinkedList wid high LinkedList
+
+        return small.next;
+    } */
 	
 	public int iterativeSearch(int key) {
 		Node temp = head;
@@ -297,6 +392,34 @@ public class LLQ {
 			return -1;
 		return idx+1;
 	}
+	
+	public Node oddEvenList(Node head) {
+        if(head == null || head.next==null)
+        return head;
+
+        Node odd = head, even=head.next, evenHead= even;
+
+        //My Approach
+        //firstly, it will connect first odd index to next odd index then it wil come to that next odd index.
+        //similarly,it will connect first even index to next even index then it wil come to that next even index.  
+        //lastly, connect the odd last element with first even index.
+        while(odd.next!=null &&even.next!=null){
+            odd.next=even.next;
+            odd=even.next;
+            even.next=odd.next;
+            even=odd.next;
+        }
+
+        // while(odd.next!=null &&even.next!=null){
+        //     odd.next=even.next;
+        //     odd=odd.next;
+        //     even.next=odd.next;
+        //     even=even.next;
+        // }
+
+        odd.next=evenHead;
+        return head;
+    }
 	
 	//display
 	public void display() {

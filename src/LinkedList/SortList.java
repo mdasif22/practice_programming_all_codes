@@ -1,7 +1,5 @@
 package LinkedList;
 
-import LinkedList.LLQ.Node;
-
 public class SortList {
 	Node head=null;
 	
@@ -13,6 +11,7 @@ public class SortList {
 		public Node(int data){
 			this.data=data;		
 		}	
+		public Node(){}
 	}
 	
 	//Insert Last method
@@ -113,6 +112,55 @@ public class SortList {
 	}
 
 	 
+	 //Insertion sort Q147
+	//https://www.youtube.com/watch?v=CPAWcc78IB4
+	 public static Node insertionSortList(Node head) {
+	        //Solution 1
+	        /*
+	        ListNode dummy = new ListNode(-1);
+	        ListNode curr = head;
+	        while(curr!=null){
+	            ListNode temp = curr.next;
+	            ListNode prev = dummy;
+	            ListNode nxt = dummy.next;
+
+	            while(nxt!=null){
+	                if(nxt.val>curr.val)
+	                    break;
+	                prev = nxt;
+	                nxt = nxt.next;
+	            }
+
+	            curr.next=nxt;
+	            prev.next=curr;
+	            curr=temp;
+	        }
+	        return dummy.next;
+	        */
+
+	        //Solution 2
+	        //https://www.youtube.com/watch?v=CPAWcc78IB4
+		 	Node start = new Node();
+	        start.next = head;
+	        Node curr = head, prev = start;
+	        while (curr != null){
+	            if(curr.next != null && (curr.next.data < curr.data)){
+	            	// Insertion
+	                while(prev.next != null && (prev.next.data < curr.next.data)) {
+	                    prev = prev.next;
+	                }
+	                    Node temp = prev.next;
+	                    prev.next = curr.next;
+	                    curr.next = curr.next.next;
+	                    prev.next.next = temp;
+	                    prev = start;
+	                    
+	            } else
+	                curr = curr.next;
+	        }
+	        return start.next;
+	    }
+	 
 	// Display method
 	 public void display() {
 			Node temp = head;
@@ -127,20 +175,29 @@ public class SortList {
 	public static void main(String[] args) {
 		
 		SortList list = new SortList();
-		list.last(4);
-		list.last(5);
-		list.last(1);
-		list.last(3);
-		list.last(2);
-		list.last(6);
-		list.display();
+//		list.last(4);
+//		list.last(5);
+//		list.last(1);
+//		list.last(3);
+//		list.last(2);
+//		list.last(6);
+//		list.display();
 		
 //		list.Bubblesort();
 //		list.display();
 		
-	 	list.head = list.mergeSort(list.head);
-		list.display();
+//	 	list.head = list.mergeSort(list.head);
+//		list.display();
 		
+		
+		list.last(4);
+		list.last(2);
+		list.last(1);
+		list.last(3);
+
+		list.display();
+		list.head = insertionSortList(list.head);
+		list.display();
 	}
 
 }
