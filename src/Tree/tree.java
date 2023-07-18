@@ -89,22 +89,58 @@ public class tree {
 					que.add(currNode.right);
 			}
 		}
-		
+	}	
+	
+	//HomeWork by Shradha (My approach)
+		public static int SumInKLevel(Node node,int k) {
+			if(node==null)
+				return 0;
+			int c=0,sum=0;
+			
+			Queue<Node> que = new LinkedList<>();
+			que.add(node);
+			que.add(null);
+			
+			while(!que.isEmpty()) {
+				Node currNode = que.remove();
+				
+				if(currNode==null) {
+					//System.out.println();
+					c++;
+					if(que.isEmpty())
+						break;
+					else {
+						que.add(null);
+					}
+				}
+				else {
+					//System.out.print(currNode.data+" ");
+					if(c==k) {
+						sum+=currNode.data;
+					}
+					if(currNode.left!=null)
+						que.add(currNode.left);
+					if(currNode.right!=null)
+						que.add(currNode.right);
+				}
+			}
+		return sum;
 	}
 
 	public static void main(String[] args) {
 		Node root = new Node(1);
 		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.left.right.left = new Node(6);
-		root.right.left = new Node(7);
-		root.right.right = new Node(8);
-		
+		root.right = new Node(3);	
+		root.left.left = new Node(4);									//			1
+		root.left.left = new Node(4);									//		   /  \
+		root.left.left = new Node(4);									//		  2    3
+		root.left.right = new Node(5);									//	 	 / \  / \
+		root.left.right.left = new Node(6);								//		4   5 7 8
+		root.right.left = new Node(7);									//		   /
+		root.right.right = new Node(8);									//		  6
 		
 		//preOrder(root);
-		preOrderIterative(root);
+		//preOrderIterative(root);
 		
 		//InOrder(root);
 		
@@ -112,5 +148,6 @@ public class tree {
 		
 		//LevelOrder(root);
 		
+		//System.out.println(SumInKLevel(root,1));
 	}
 }
