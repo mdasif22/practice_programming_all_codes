@@ -67,11 +67,12 @@ public class Stream_Demo {
 		l1.add(0);
 				
 		List<Integer> l2 = l1.stream().sorted().collect(Collectors.toList());
+		List<Integer> li = list1.stream().sorted((i1,i2)->(i1<i2)?+1:(i1>i2)?-1:0).collect(Collectors.toList());
 		List<Integer> l3 = l1.stream().sorted((i1,i2)->-i1.compareTo(i2)).collect(Collectors.toList());
 //		System.out.println("List 1 : "+l1);
 //		System.out.println("Accending : "+l2);
 //		System.out.println("Decending : "+l3);
-		
+//		System.out.println("Decending Another formate : "+li);
 		
 		//Ex5
 		//When we want to get "min" and "max" value of List then we use "min" and "max" method.
@@ -109,10 +110,6 @@ public class Stream_Demo {
 				l5.stream().forEach(i->{
 					System.out.println("Square of "+i+" = "+i*i);
 				});
-				
-				
-				
-			
 				
 	}
 

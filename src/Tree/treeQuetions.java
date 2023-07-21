@@ -321,7 +321,97 @@ public class treeQuetions {
 		ans.remove(ans.size()-1);
 		return false;
 	}
+	
+	//Q1022
+	static List<String> list = new ArrayList<>();
+	public static int sumRootToLeaf(node1 root) {
+        if(root==null)
+        	return 0;
+        int sum=0;
+        sum(root,"");
+        
+        for(String s : list) {
+        	sum+=Integer.parseInt(s,2);
+        }
+        
+        return sum;
+    }
 
+	private static void sum(node1 root, String str) {
+		if(root==null)
+        	return;
+		
+		if(root.left==null && root.right==null) {
+			str+=root.data;
+			list.add(str);
+			return;
+		}
+		str+=root.data;
+		sum(root.left, str);
+		sum(root.right, str);
+		
+		return;
+	}
+	
+	//Q129
+	public static int sumNumbers(node1 root) {
+        if(root==null)
+        	return 0;
+        int sum=0;
+        sumRoot(root,"");
+        
+        for(String s : list) {
+        	sum+=Integer.parseInt(s);
+        }
+        
+        return sum;
+    }
+	
+	private static void sumRoot(node1 root, String str) {
+		if(root==null)
+        	return;
+		
+		if(root.left==null && root.right==null) {
+			str+=root.data;
+			list.add(str);
+			return;
+		}
+		str+=root.data;
+		sumRoot(root.left, str);
+		sumRoot(root.right, str);
+		
+		return;
+	}
+	
+	//Q226
+	public node1 invertTree(node1 root) {
+		if (root == null)
+			return root;
+
+		node1 temp = root.left;
+		root.left = root.right;
+		root.right = temp;
+
+		invertTree(root.left);
+		invertTree(root.right);
+
+		return root;
+	}
+	
+	//Q114 by Striver
+	node1 prev = null;
+    public void flatten(node1 root) {
+        if(root == null)
+            return;
+        
+        flatten(root.right);
+        flatten(root.left);
+
+        root.right = prev;
+        root.left = null;
+        prev = root;
+    }
+	
 	public static void main(String[] args) {
 		node1 root = new node1(1);
 		root.left = new node1(2);
@@ -352,7 +442,11 @@ public class treeQuetions {
 		
 		//System.out.println(leftSideView(root));
 		
-		System.out.println(PrintRootToNodePath(root,6));
+		//System.out.println(PrintRootToNodePath(root,6));
+		
+		//System.out.println(sumRootToLeaf(root));
+		
+		System.out.println(sumNumbers(root));
 		
 	}
 

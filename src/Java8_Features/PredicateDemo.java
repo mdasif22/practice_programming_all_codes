@@ -1,7 +1,7 @@
 package Java8_Features;
 
 //it works with boolean only. If we want to check some condition and return boolean value then it is used.
-
+// we can use IntPredicate instead of Predicate to avoid internal autoboxing and autounboxing
 import java.util.ArrayList;
 import java.util.function.*;
 public class PredicateDemo {
@@ -14,6 +14,7 @@ public class PredicateDemo {
 
 	public static void main(String[] args) {
 		//Ex1
+		//IntPredicate we can also use instead Predicate
 		Predicate<Integer> p = i->i%2==0;
 		System.out.println(p.test(10));
 		System.out.println(p.test(15));

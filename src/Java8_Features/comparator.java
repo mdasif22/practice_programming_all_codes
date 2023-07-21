@@ -3,6 +3,8 @@ package Java8_Features;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 class MyComparator implements Comparator<Integer>{
 
@@ -37,5 +39,9 @@ public class comparator {
 		Comparator<Integer> c = (o1,o2) -> (o1<o2)?+1:(o1>o2)?-1:0;
 		Collections.sort(l,c);
 		System.out.println(l);
+		
+		//using stream
+		List<Integer> l1 = l.stream().sorted((i1,i2)->(i1<i2)?+1:(i1>i2)?-1:0).collect(Collectors.toList());
+		System.out.println("Using stream comparator in sorted : "+l1);
 	}
 }
