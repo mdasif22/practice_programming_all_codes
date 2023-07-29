@@ -411,6 +411,22 @@ public class treeQuetions {
         root.left = null;
         prev = root;
     }
+    
+    //Q236 by striver
+    public static node1 lowestCommonAncestor(node1 root, node1 p, node1 q) {
+        if(root==null || root == p || root == q){
+            return root;
+        }
+        node1 left = lowestCommonAncestor(root.left,p,q);
+        node1 right = lowestCommonAncestor(root.right,p,q);
+
+        if(left == null)
+            return right;
+        else if(right == null)
+            return left;
+        else
+            return root;
+    }
 	
 	public static void main(String[] args) {
 		node1 root = new node1(1);
