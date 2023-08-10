@@ -296,7 +296,7 @@ public class BinarySearchTree {
     		if(root.data<=key)
     			root = root.right;
     		else {
-    			succ = root;
+    			succ = root; 
     			root = root.left;
     		}
     	}
@@ -391,7 +391,7 @@ public class BinarySearchTree {
 		Integer[] arr = {7,1,3,6,5};
 		int[] values = {5,1,3,4,2,7,6};				//    5
 		Node root = null;							//   /  \
-		int target = 28;								//  1     7
+		int target = 28;							//  1     7
 													//   \	  /
 		//for inserting values in tree			  //      3  6 
 		for(int i=0;i<values.length;i++) {		  //     /  \

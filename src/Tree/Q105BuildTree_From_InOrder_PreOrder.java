@@ -35,7 +35,7 @@ class Q105BuildTree_From_InOrder_PreOrder {
    //create the root node (which is first node of preorder)
    TreeNode root = new TreeNode(preorder[preStart]);
    
-   //find position of root in preorder (first node is root of tree of preorder)
+   //find position of root in inorder 
    int inRoot = inMap.get(preorder[preStart]);
    //check how many numbers are in left from root
    int numsLeft = inRoot - inStart;

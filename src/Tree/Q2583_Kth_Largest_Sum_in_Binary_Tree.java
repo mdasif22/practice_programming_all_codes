@@ -63,8 +63,11 @@ public class Q2583_Kth_Largest_Sum_in_Binary_Tree {
 			list.add(sum);
 		}
 		//to sort in descending order
-		List<Integer> l3 = list.stream().sorted((i1, i2) -> -i1.compareTo(i2)).collect(Collectors.toList());
-		return l3.get(k - 1);
+//		List<Integer> l3 = list.stream().sorted((i1, i2) -> -i1.compareTo(i2)).collect(Collectors.toList());
+//		return l3.get(k - 1);
+		Collections.sort(list);
+		return list.get(list.size() - k);
+		
 	}
 
 	public static void main(String[] args) {

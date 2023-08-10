@@ -254,7 +254,6 @@ public class treeQuetions {
         
         leftSideFunc(root.left,ans,level+1);
         leftSideFunc(root.right,ans,level+1);
-       
     }
     
     //Q199 right side view by striver
@@ -296,6 +295,7 @@ public class treeQuetions {
         return isSymmetricHelp(left.left,right.right) && isSymmetricHelp(left.right,right.left);
     }
     
+    //Q 
     public static ArrayList<Integer> PrintRootToNodePath(node1 root,int targetNode) {
     	ArrayList<Integer> ans = new ArrayList<>();
     	if(root == null)
@@ -322,7 +322,7 @@ public class treeQuetions {
 		return false;
 	}
 	
-	//Q1022
+	//Q1022 & Q129 both have same solution
 	static List<String> list = new ArrayList<>();
 	public static int sumRootToLeaf(node1 root) {
         if(root==null)
@@ -349,36 +349,6 @@ public class treeQuetions {
 		str+=root.data;
 		sum(root.left, str);
 		sum(root.right, str);
-		
-		return;
-	}
-	
-	//Q129
-	public static int sumNumbers(node1 root) {
-        if(root==null)
-        	return 0;
-        int sum=0;
-        sumRoot(root,"");
-        
-        for(String s : list) {
-        	sum+=Integer.parseInt(s);
-        }
-        
-        return sum;
-    }
-	
-	private static void sumRoot(node1 root, String str) {
-		if(root==null)
-        	return;
-		
-		if(root.left==null && root.right==null) {
-			str+=root.data;
-			list.add(str);
-			return;
-		}
-		str+=root.data;
-		sumRoot(root.left, str);
-		sumRoot(root.right, str);
 		
 		return;
 	}
@@ -461,8 +431,6 @@ public class treeQuetions {
 		//System.out.println(PrintRootToNodePath(root,6));
 		
 		//System.out.println(sumRootToLeaf(root));
-		
-		System.out.println(sumNumbers(root));
 		
 	}
 

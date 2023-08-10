@@ -40,7 +40,6 @@ public class top_bottom_view {
 			if (node.right != null) {
 				q.add(new Pair(node.right, line + 1));
 			}
-
 		}
 
 		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
