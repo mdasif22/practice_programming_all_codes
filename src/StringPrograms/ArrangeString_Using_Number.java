@@ -4,6 +4,27 @@ class ArrangeString_Using_Number
 {
 	public static void main (String[] args)
 	{	
+		  //My approach
+		  String str = "test4 this1 the3 is2";
+		  String res = "";
+		  String[] words = str.split(" ");
+		  int[] index = new int[words.length];
+		  String[] ans = new String[words.length];
+		  for(int i=0;i<index.length;i++) {
+			  int l=words[i].length()-1;
+			  index[i] = Integer.parseInt(words[i].substring(l));
+		  }
+		  for(int i=0;i<index.length;i++) {
+			  ans[index[i]-1] = words[i];
+		  }
+		  for(String ele:ans) {
+			  res+=ele + " ";
+		  }
+		  System.out.println(res);
+		
+		
+		
+		/*
 		//Method 1 O(n)
 		String str = "test4 this1 the3 is2";
 		String str2 = "";
@@ -19,7 +40,7 @@ class ArrangeString_Using_Number
 		}
 		
 		System.out.println(str2.trim());
-      
+       */
 		
 		//Method 2 O(n2)
 //		String str = "test4 this1 the3 is2";
